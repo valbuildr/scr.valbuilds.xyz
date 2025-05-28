@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import "tailwindcss";
+
+@plugin 'flowbite/plugin';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Ubuntu", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary-50: #fcf5fe;
+  --color-primary-100: #f9edfd;
+  --color-primary-200: #f1d5f9;
+  --color-primary-300: #e8b3f4;
+  --color-primary-400: #dc86ec;
+  --color-primary-500: #c957de;
+  --color-primary-600: #ad37c2;
+  --color-primary-700: #922ba0;
+  --color-primary-800: #792583;
+  --color-primary-900: #66236c;
+  --color-primary-950: #410b47;
+
+  --color-secondary-50: #ecfdf6;
+  --color-secondary-100: #d2f9e8;
+  --color-secondary-200: #a8f2d5;
+  --color-secondary-300: #70e5bf;
+  --color-secondary-400: #37d0a3;
+  --color-secondary-500: #12af86;
+  --color-secondary-600: #079472;
+  --color-secondary-700: #06765e;
+  --color-secondary-800: #075e4b;
+  --color-secondary-900: #074d3f;
+  --color-secondary-950: #032b25;
+
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #e7e7e7;
+  --color-gray-200: #d1d1d1;
+  --color-gray-300: #b0b0b0;
+  --color-gray-400: #888888;
+  --color-gray-500: #6d6d6d;
+  --color-gray-600: #5d5d5d;
+  --color-gray-700: #4f4f4f;
+  --color-gray-800: #454545;
+  --color-gray-900: #3d3d3d;
+  --color-gray-950: #171717;
+}
+
+@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
+
+@layer base {
+  /* disable chrome cancel button */
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}
