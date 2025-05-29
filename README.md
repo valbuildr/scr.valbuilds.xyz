@@ -1,3 +1,3 @@
 # scr.valbuilds.xyz
 
-A website for all of my SCR projects.
+A website for all of my SCR-related projects.
