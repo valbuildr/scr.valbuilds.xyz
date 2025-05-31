@@ -100,8 +100,7 @@
     ><EditSolid class="me-2 h-5 w-5" /> Positions Tool</Button
   >
   <Button href="https://discord.gg/" color="dark"
-    ><DiscordSolid class="me-2 h-5 w-5" /> Support server (shifts are also hosted
-    here!)</Button
+    ><DiscordSolid class="me-2 h-5 w-5" /> Support Server</Button
   >
   <Button href="/shift-bot/self-host" color="dark"
     ><BookOpenSolid class="me-2 h-5 w-5" /> Self-hosting guide</Button
