@@ -45,28 +45,6 @@
   }: Props = $props();
 
   import { Button } from "flowbite-svelte";
-
-  const obj = {
-    meta: {
-      name: shiftName,
-      host: shiftHost,
-      cohost: shiftCohost,
-      date: shiftDate,
-      time: shiftTime,
-      duration: shiftDuration,
-      ruleset: shiftRuleset,
-      scenario: shiftScenario,
-      notes: shiftNotes,
-    },
-    svPositions: svPositions,
-    spPositions: spPositions,
-    sgPositions: sgPositions,
-    gdPositions: gdPositions,
-    dsPositions: dsPositions,
-    qdPositions: qdPositions,
-    hello: "world",
-    version: "1",
-  };
 </script>
 
 <div
@@ -91,6 +69,27 @@
         1}
     size="lg"
     onclick={() => {
+      const obj = {
+        meta: {
+          name: shiftName,
+          host: shiftHost,
+          cohost: shiftCohost,
+          date: shiftDate,
+          time: shiftTime,
+          duration: shiftDuration,
+          ruleset: shiftRuleset,
+          scenario: shiftScenario,
+          notes: shiftNotes,
+        },
+        svPositions,
+        spPositions,
+        sgPositions,
+        gdPositions,
+        dsPositions,
+        qdPositions,
+        hello: "world",
+        version: "1",
+      };
       const dataStr =
         "data:text/json;charset=utf-8," +
         encodeURIComponent(JSON.stringify(obj, null, 2));
