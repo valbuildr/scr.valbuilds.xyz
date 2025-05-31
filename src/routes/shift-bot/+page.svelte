@@ -96,10 +96,10 @@
   class="mb-4 max-w-screen-lg text-white mx-auto justify-center text-center mt-3"
 >
   <p class="text-2xl font-bold mb-1">Resources</p>
-  <Button href="https://discord.gg/" color="dark"
+  <Button href="/shift-bot/positions-tool" color="dark"
     ><EditSolid class="me-2 h-5 w-5" /> Positions Tool</Button
   >
-  <Button href="/shift-bot/self-host" color="dark"
+  <Button href="https://discord.gg/" color="dark"
     ><DiscordSolid class="me-2 h-5 w-5" /> Support server (shifts are also hosted
     here!)</Button
   >
