@@ -19,7 +19,7 @@
   </div>
 
   <div class="border-t border-white/50 mt-2 text-white">
-    <div class="max-w-screen-xl px-3 pt-3 mx-auto">
+    <div class="max-w-screen-lg px-3 lg:px-0 pt-3 mx-auto">
       <p class="font-bold text-lg">Made with ❤️ by Valentine. 🏳️‍⚧️</p>
       <p>
         This website is open source! Check out the source code <a
