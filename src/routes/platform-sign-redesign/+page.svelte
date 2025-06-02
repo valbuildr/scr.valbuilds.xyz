@@ -28,6 +28,7 @@
   it.
 </div>
 
+<!-- ToC/Github Tip -->
 <div
   class="mb-4 p-2 max-w-screen-lg bg-gray-900/50 border border-gray-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
 >
@@ -196,6 +197,7 @@
   {/if}
 </div>
 
+<!-- TfS/NR -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="tfs">
@@ -232,7 +234,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/Instrument+Sans"
       class="hover:underline">Instrument Sans</a
@@ -242,6 +244,7 @@
 
 <hr class="border-white/50 my-2 max-w-screen-lg mx-auto" />
 
+<!-- Connect -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="cn">Stepford Connect</p>
@@ -276,7 +279,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/Public+Sans"
       class="hover:underline">Pubic Sans</a
@@ -286,6 +289,7 @@
 
 <hr class="border-white/50 my-2 max-w-screen-lg mx-auto" />
 
+<!-- Waterline -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="wl">Waterline</p>
@@ -320,7 +324,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/Raleway"
       class="hover:underline">Raleway</a
@@ -330,6 +334,7 @@
 
 <hr class="border-white/50 my-2 max-w-screen-lg mx-auto" />
 
+<!-- Airlink -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="al">Airlink</p>
@@ -364,7 +369,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/Red+Hat+Display"
       class="hover:underline">Red Hat Display</a
@@ -374,6 +379,7 @@
 
 <hr class="border-white/50 my-2 max-w-screen-lg mx-auto" />
 
+<!-- Express -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="ex">Stpford Express</p>
@@ -408,7 +414,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/DM+Mono"
       class="hover:underline">DM Mono</a
@@ -418,6 +424,7 @@
 
 <hr class="border-white/50 my-2 max-w-screen-lg mx-auto" />
 
+<!-- Metro -->
 <div class="p-2 max-w-screen-sm mx-auto text-white">
   <div class="flex items-center justify-between">
     <p class="text-3xl font-bold mb-2" id="mt">Metro</p>
@@ -452,7 +459,7 @@
       </div>
     {/each}
   </div>
-  <p class="mt-4">
+  <p class="mt-4 text-white/50">
     Font: <a
       href="https://fonts.google.com/specimen/Montserrat"
       class="hover:underline">Montserrat</a
