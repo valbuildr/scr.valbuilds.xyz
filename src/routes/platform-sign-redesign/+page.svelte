@@ -205,7 +205,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">Simple, yet unique for every staton.</p>
+  <p class="mb-4">Simple, yet unique to every staton.</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.tfs_nr as station}
       <div>
@@ -249,7 +249,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">Connecting big and small.</p>
+  <p class="mb-4">Shines a light.</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.connect as station}
       <div>
@@ -293,7 +293,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">Follow the water and you might find something cool.</p>
+  <p class="mb-4">Angled.</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.waterline as station}
       <div>
@@ -337,7 +337,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">The fastest way to the airport.</p>
+  <p class="mb-4">The line is broken.</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.airlink as station}
       <div>
@@ -381,7 +381,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">Zoom zoom.</p>
+  <p class="mb-4">Switching tracks.</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.express as station}
       <div>
@@ -425,7 +425,7 @@
       back to top
     </a>
   </div>
-  <p class="mb-4">Inspired by the current design.</p>
+  <p class="mb-4">Bubbles. (inspired by the current design)</p>
   <div class="flex flex-col gap-2">
     {#each STATIONS.metro as station}
       <div>
