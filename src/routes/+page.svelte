@@ -1,6 +1,8 @@
 <script lang="ts">
   import { Button } from "flowbite-svelte";
   import { PROJECTS } from "$lib";
+
+  let search: string | undefined = $state(undefined);
 </script>
 
 <div
@@ -17,14 +19,23 @@
   >.
 </div>
 
-{#each Object.values(PROJECTS) as project}
+<div class="max-w-screen-lg mx-auto mb-2">
+  <input
+    type="text"
+    class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
+    bind:value={search}
+    placeholder="Search"
+  />
+</div>
+
+{#each Object.values(PROJECTS).filter(project => !search || project.title.toLowerCase().includes(search.toLowerCase())) as project}
   <div
     class="mb-4 p-6 bg-cover max-w-screen-lg aspect-video bg-primary-700 border border-gray-600 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg flex flex-col items-start justify-end relative"
     style={"background-image: url(" + project.bgImage + ");"}
   >
     {#if project.status == "draft"}
       <p
-        class="px-3 bg-yellow-500/50 border border-yellow-500 rounded-lg text-yellow-100 z-60 mb-2"
+        class="px-2 bg-yellow-500/50 border border-yellow-500 rounded-lg text-yellow-100 z-60 mb-2"
       >
         Draft
       </p>
@@ -36,19 +47,19 @@
       </p>
     {:else if project.status == "beta"}
       <p
-        class="px-3 bg-cyan-500/50 border border-cyan-500 rounded-lg text-cyan-100 z-60 mb-2"
+        class="px-2 bg-cyan-500/50 border border-cyan-500 rounded-lg text-cyan-100 z-60 mb-2"
       >
         Beta
       </p>
     {:else if project.status == "released"}
       <p
-        class="px-3 bg-green-500/50 border border-green-500 rounded-lg text-green-100 z-60 mb-2"
+        class="px-2 bg-green-500/50 border border-green-500 rounded-lg text-green-100 z-60 mb-2"
       >
         Released
       </p>
     {:else if project.status == "eol"}
       <p
-        class="px-3 bg-red-500/50 border border-red-500 rounded-lg text-red-100 z-60 mb-2"
+        class="px-2 bg-red-500/50 border border-red-500 rounded-lg text-red-100 z-60 mb-2"
       >
         End-of-Life
       </p>
@@ -65,3 +76,7 @@
     {/if}
   </div>
 {/each}
+
+{#if Object.values(PROJECTS).filter(project => !search || project.title.toLowerCase().includes(search.toLowerCase())).length == 0}
+  <p class="text-center text-white/75">No results</p>
+{/if}
