@@ -237,7 +237,7 @@
   <div
     class="max-w-screen-lg flex gap-2 p-2 mx-auto w-full text-white bg-primary-900/50 lg:rounded-lg"
   >
-    <Button disabled size="lg">Import</Button>
+    <Button disabled size="lg" title="Coming soon...">Import</Button>
 
     <Button
       disabled={shiftName == undefined ||
