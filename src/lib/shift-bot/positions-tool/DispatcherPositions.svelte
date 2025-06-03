@@ -37,7 +37,7 @@
 <div
   class="max-w-screen-lg p-2 mx-auto w-full text-white bg-ds/50 lg:rounded-lg"
 >
-  <div class="flex justify-between items-center mb-2">
+  <div class="flex justify-between items-center mb-1">
     <p class="text-xl font-bold">Dispatchers</p>
     <div>
       <Button
@@ -59,48 +59,50 @@
     </div>
   </div>
 
-  {#each positions as pos}
-    <div class="w-full bg-ds/50 rounded-lg p-2 my-1">
-      <div class="flex items-center gap-1 my-0.5">
-        <p class="font-medium">ID:</p>
-        <p>{positions.indexOf(pos) + 1}</p>
-      </div>
-      {#if pos.station}
+  <div class="flex flex-col gap-2">
+    {#each positions as pos}
+      <div class="w-full bg-ds/50 rounded-lg p-2">
         <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Station:</p>
-          <p>{STATIONS[pos.station].name}</p>
+          <p class="font-medium">ID:</p>
+          <p>{positions.indexOf(pos) + 1}</p>
         </div>
-      {:else}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Station:</p>
-          <p>Any</p>
-        </div>
-      {/if}
+        {#if pos.station}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Station:</p>
+            <p>{STATIONS[pos.station].name}</p>
+          </div>
+        {:else}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Station:</p>
+            <p>Any</p>
+          </div>
+        {/if}
 
-      {#if pos.platform_group != undefined}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Platform Group:</p>
-          <p class="px-1 mx-1 bg-ds/50 rounded">
-            <!-- This gives an error in the IDE but works perfectly fine. -->
-            {STATIONS[pos.station].dispatch_groups[pos.platform_group]
-              .toString()
-              .replaceAll(",", ", ")}
-          </p>
-        </div>
-      {:else}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Platform Group:</p>
-          <p>Any</p>
-        </div>
-      {/if}
-      <Button
-        color="light"
-        onclick={() => {
-          positions.splice(positions.indexOf(pos), 1);
-        }}>Remove</Button
-      >
-    </div>
-  {/each}
+        {#if pos.platform_group != undefined}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Platform Group:</p>
+            <p class="px-1 mx-1 bg-ds/50 rounded">
+              <!-- This gives an error in the IDE but works perfectly fine. -->
+              {STATIONS[pos.station].dispatch_groups[pos.platform_group]
+                .toString()
+                .replaceAll(",", ", ")}
+            </p>
+          </div>
+        {:else}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Platform Group:</p>
+            <p>Any</p>
+          </div>
+        {/if}
+        <Button
+          color="light"
+          onclick={() => {
+            positions.splice(positions.indexOf(pos), 1);
+          }}>Remove</Button
+        >
+      </div>
+    {/each}
+  </div>
   {#if positions.length == 0}
     <div class="w-full bg-ds/50 rounded-lg p-2 my-1">
       <p>No dispatcher positions added.</p>

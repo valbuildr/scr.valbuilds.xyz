@@ -42,7 +42,7 @@
 <div
   class="max-w-screen-lg p-2 mx-auto w-full text-white bg-qd/50 lg:rounded-lg"
 >
-  <div class="flex justify-between items-center mb-2">
+  <div class="flex justify-between items-center mb-1">
     <p class="text-xl font-bold">Drivers</p>
     <div>
       <Button
@@ -64,102 +64,104 @@
     </div>
   </div>
 
-  {#each positions as pos}
-    <div class="w-full bg-qd/50 rounded-lg p-2 my-1">
-      <div class="flex items-center gap-1 my-0.5">
-        <p class="font-medium">ID:</p>
-        <p>{positions.indexOf(pos) + 1}</p>
-      </div>
-      {#if pos.leg_1}
+  <div class="flex flex-col gap-2">
+    {#each positions as pos}
+      <div class="w-full bg-qd/50 rounded-lg p-2">
         <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Leg 1:</p>
-          {#if ROUTES[pos.leg_1].alternate_name != undefined}
-            <p>
-              {ROUTES[pos.leg_1].alternate_name}
-              <span class="text-white/75"
-                >{ROUTES[pos.leg_1].inbound_destination} &lt;&gt; {ROUTES[
+          <p class="font-medium">ID:</p>
+          <p>{positions.indexOf(pos) + 1}</p>
+        </div>
+        {#if pos.leg_1}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Leg 1:</p>
+            {#if ROUTES[pos.leg_1].alternate_name != undefined}
+              <p>
+                {ROUTES[pos.leg_1].alternate_name}
+                <span class="text-white/75"
+                  >{ROUTES[pos.leg_1].inbound_destination} &lt;&gt; {ROUTES[
+                    pos.leg_1
+                  ].outbound_destination}</span
+                >
+              </p>
+            {:else}
+              <p>
+                {ROUTES[pos.leg_1].inbound_destination} &lt;&gt; {ROUTES[
                   pos.leg_1
-                ].outbound_destination}</span
-              >
-            </p>
-          {:else}
-            <p>
-              {ROUTES[pos.leg_1].inbound_destination} &lt;&gt; {ROUTES[
-                pos.leg_1
-              ].outbound_destination}
-            </p>
-          {/if}
-        </div>
-      {:else}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Leg 1:</p>
-          <p>Any</p>
-        </div>
-      {/if}
+                ].outbound_destination}
+              </p>
+            {/if}
+          </div>
+        {:else}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Leg 1:</p>
+            <p>Any</p>
+          </div>
+        {/if}
 
-      {#if pos.spawn_depot}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Spawn Depot:</p>
-          <p>{pos.spawn_depot}</p>
-        </div>
-      {:else}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Spawn Depot:</p>
-          <p>Any</p>
-        </div>
-      {/if}
+        {#if pos.spawn_depot}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Spawn Depot:</p>
+            <p>{pos.spawn_depot}</p>
+          </div>
+        {:else}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Spawn Depot:</p>
+            <p>Any</p>
+          </div>
+        {/if}
 
-      {#if pos.leg_2}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Leg 2:</p>
-          {#if ROUTES[pos.leg_2].alternate_name != undefined}
-            <p>
-              {ROUTES[pos.leg_2].alternate_name}
-              <span class="text-white/75"
-                >{ROUTES[pos.leg_2].inbound_destination} &lt;&gt; {ROUTES[
+        {#if pos.leg_2}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Leg 2:</p>
+            {#if ROUTES[pos.leg_2].alternate_name != undefined}
+              <p>
+                {ROUTES[pos.leg_2].alternate_name}
+                <span class="text-white/75"
+                  >{ROUTES[pos.leg_2].inbound_destination} &lt;&gt; {ROUTES[
+                    pos.leg_2
+                  ].outbound_destination}</span
+                >
+              </p>
+            {:else}
+              <p>
+                {ROUTES[pos.leg_2].inbound_destination} &lt;&gt; {ROUTES[
                   pos.leg_2
-                ].outbound_destination}</span
-              >
-            </p>
-          {:else}
-            <p>
-              {ROUTES[pos.leg_2].inbound_destination} &lt;&gt; {ROUTES[
-                pos.leg_2
-              ].outbound_destination}
-            </p>
-          {/if}
-        </div>
-      {/if}
+                ].outbound_destination}
+              </p>
+            {/if}
+          </div>
+        {/if}
 
-      {#if pos.leg_3}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Leg 3:</p>
-          {#if ROUTES[pos.leg_3].alternate_name != undefined}
-            <p>
-              {ROUTES[pos.leg_3].alternate_name}
-              <span class="text-white/75"
-                >{ROUTES[pos.leg_3].inbound_destination} &lt;&gt; {ROUTES[
+        {#if pos.leg_3}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Leg 3:</p>
+            {#if ROUTES[pos.leg_3].alternate_name != undefined}
+              <p>
+                {ROUTES[pos.leg_3].alternate_name}
+                <span class="text-white/75"
+                  >{ROUTES[pos.leg_3].inbound_destination} &lt;&gt; {ROUTES[
+                    pos.leg_3
+                  ].outbound_destination}</span
+                >
+              </p>
+            {:else}
+              <p>
+                {ROUTES[pos.leg_3].inbound_destination} &lt;&gt; {ROUTES[
                   pos.leg_3
-                ].outbound_destination}</span
-              >
-            </p>
-          {:else}
-            <p>
-              {ROUTES[pos.leg_3].inbound_destination} &lt;&gt; {ROUTES[
-                pos.leg_3
-              ].outbound_destination}
-            </p>
-          {/if}
-        </div>
-      {/if}
-      <Button
-        color="light"
-        onclick={() => {
-          positions.splice(positions.indexOf(pos), 1);
-        }}>Remove</Button
-      >
-    </div>
-  {/each}
+                ].outbound_destination}
+              </p>
+            {/if}
+          </div>
+        {/if}
+        <Button
+          color="light"
+          onclick={() => {
+            positions.splice(positions.indexOf(pos), 1);
+          }}>Remove</Button
+        >
+      </div>
+    {/each}
+  </div>
   {#if positions.length == 0}
     <div class="w-full bg-qd/50 rounded-lg p-2 my-1">
       <p>No driving positions added.</p>

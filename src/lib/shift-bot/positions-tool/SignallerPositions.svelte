@@ -29,7 +29,7 @@
 <div
   class="max-w-screen-lg p-2 mx-auto w-full text-white bg-sg/50 lg:rounded-lg"
 >
-  <div class="flex justify-between items-center mb-2">
+  <div class="flex justify-between items-center mb-1">
     <p class="text-xl font-bold">Signallers</p>
     <div>
       <Button
@@ -51,31 +51,33 @@
     </div>
   </div>
 
-  {#each positions as pos}
-    <div class="w-full bg-sg/50 rounded-lg p-2 my-1">
-      <div class="flex items-center gap-1 my-0.5">
-        <p class="font-medium">ID:</p>
-        <p>{positions.indexOf(pos) + 1}</p>
+  <div class="flex flex-col gap-2">
+    {#each positions as pos}
+      <div class="w-full bg-sg/50 rounded-lg p-2">
+        <div class="flex items-center gap-1 my-0.5">
+          <p class="font-medium">ID:</p>
+          <p>{positions.indexOf(pos) + 1}</p>
+        </div>
+        {#if pos.zone}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Zone:</p>
+            <p>{pos.zone} ({SIGNAL_ZONES[pos.zone].name})</p>
+          </div>
+        {:else}
+          <div class="flex items-center gap-1 my-0.5">
+            <p class="font-medium">Zone:</p>
+            <p>Any</p>
+          </div>
+        {/if}
+        <Button
+          color="light"
+          onclick={() => {
+            positions.splice(positions.indexOf(pos), 1);
+          }}>Remove</Button
+        >
       </div>
-      {#if pos.zone}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Zone:</p>
-          <p>{pos.zone} ({SIGNAL_ZONES[pos.zone].name})</p>
-        </div>
-      {:else}
-        <div class="flex items-center gap-1 my-0.5">
-          <p class="font-medium">Zone:</p>
-          <p>Any</p>
-        </div>
-      {/if}
-      <Button
-        color="light"
-        onclick={() => {
-          positions.splice(positions.indexOf(pos), 1);
-        }}>Remove</Button
-      >
-    </div>
-  {/each}
+    {/each}
+  </div>
   {#if positions.length == 0}
     <div class="w-full bg-sg/50 rounded-lg p-2 my-1">
       <p>No signaller positions added.</p>
