@@ -49,7 +49,7 @@
     </p>
   </div>
   <img
-    class="w-full aspect-video lg:rounded-lg sm:rounded-l-lg"
+    class="w-full aspect-video lg:rounded-r-lg lg:rounded-l-none sm:rounded-l-lg"
     src="/shift.png"
     alt="An example shift announcement."
   />
@@ -59,7 +59,7 @@
   class="mb-4 max-w-screen-lg text-white mx-auto sm:grid sm:grid-cols-2 gap-3 items-center bg-green-900/50 lg:rounded-lg border border-green-600 lg:border-x border-x-0"
 >
   <img
-    class="w-full aspect-video lg:rounded-lg sm:rounded-r-lg"
+    class="w-full aspect-video lg:rounded-l-lg lg:rounded-r-none sm:rounded-r-lg"
     src="/shift.png"
     alt="An example shift sign up tracker."
   />
@@ -76,7 +76,7 @@
   class="mb-4 max-w-screen-lg text-white mx-auto sm:grid sm:grid-cols-2 gap-3 items-center bg-sky-900/50 lg:rounded-lg border border-sky-600 lg:border-x border-x-0"
 >
   <div class="p-3">
-    <p class="text-2xl font-medium mb-2">Made with privacy in mind</p>
+    <p class="text-2xl font-medium mb-2">Built with privacy in mind</p>
     <p class="mb-1">The bot is entirely self-hostable and open source.</p>
     <Button href="/shift-bot/self-host" color="primary"
       ><BookOpenSolid class="me-2 h-5 w-5" /> Self-hosting guide</Button
@@ -86,7 +86,7 @@
     >
   </div>
   <img
-    class="w-full aspect-video lg:rounded-lg sm:rounded-l-lg"
+    class="w-full aspect-video lg:rounded-r-lg lg:rounded-l-none sm:rounded-l-lg"
     src="/shift.png"
     alt="A section of the bot's source code."
   />
