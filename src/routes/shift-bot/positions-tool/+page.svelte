@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Button } from "flowbite-svelte";
   import { ClipboardListOutline } from "flowbite-svelte-icons";
 
   import SupervisorPositions from "$lib/shift-bot/positions-tool/SupervisorPositions.svelte";
@@ -7,8 +8,6 @@
   import DispatcherPositions from "$lib/shift-bot/positions-tool/DispatcherPositions.svelte";
   import DriverPositions from "$lib/shift-bot/positions-tool/DriverPositions.svelte";
   import GuardPositions from "$lib/shift-bot/positions-tool/GuardPositions.svelte";
-
-  import Export from "$lib/shift-bot/positions-tool/Export.svelte";
 
   import type {
     SVPosition,
@@ -235,21 +234,64 @@
       75}
   />
 
-  <Export
-    {svPositions}
-    {spPositions}
-    {sgPositions}
-    {gdPositions}
-    {dsPositions}
-    {qdPositions}
-    {shiftName}
-    {shiftHost}
-    {shiftCohost}
-    {shiftDate}
-    {shiftTime}
-    {shiftDuration}
-    {shiftRuleset}
-    {shiftScenario}
-    {shiftNotes}
-  />
+  <div
+    class="max-w-screen-lg flex gap-2 p-2 mx-auto w-full text-white bg-primary-900/50 lg:rounded-lg"
+  >
+    <Button disabled size="lg">Import</Button>
+
+    <Button
+      disabled={shiftName == undefined ||
+        shiftName == "" ||
+        shiftHost == undefined ||
+        shiftHost == "" ||
+        shiftDate == undefined ||
+        shiftTime == undefined ||
+        shiftDuration == undefined ||
+        shiftRuleset == undefined ||
+        svPositions.length < 1 ||
+        svPositions.length +
+          spPositions.length +
+          sgPositions.length +
+          gdPositions.length +
+          dsPositions.length +
+          qdPositions.length <
+          1}
+      size="lg"
+      onclick={() => {
+        const obj = {
+          meta: {
+            name: shiftName,
+            host: shiftHost,
+            cohost: shiftCohost,
+            date: shiftDate,
+            time: shiftTime,
+            duration: shiftDuration,
+            ruleset: shiftRuleset,
+            scenario: shiftScenario,
+            notes: shiftNotes,
+          },
+          svPositions,
+          spPositions,
+          sgPositions,
+          gdPositions,
+          dsPositions,
+          qdPositions,
+          hello: "world",
+          version: "1",
+        };
+        const dataStr =
+          "data:text/json;charset=utf-8," +
+          encodeURIComponent(JSON.stringify(obj, null, 2));
+
+        const dlAnchorElem = document.createElement("a");
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download", "positions.json");
+        document.body.append(dlAnchorElem);
+        dlAnchorElem.click();
+        document.body.removeChild(dlAnchorElem);
+      }}
+    >
+      Export
+    </Button>
+  </div>
 </div>
