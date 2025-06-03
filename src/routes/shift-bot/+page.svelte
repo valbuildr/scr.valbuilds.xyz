@@ -23,6 +23,16 @@
 </div>
 
 <div
+  class="mb-4 p-2 max-w-screen-lg bg-blue-950/50 border border-blue-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
+>
+  🐇 <span class="font-bold">The bot is not ready yet!</span>
+  This project is considered to be in 'Alpha' because of the
+  <a href="/shift-bot/positions-tool" class="hover:underline text-blue-400"
+    >Positions Tool</a
+  >.
+</div>
+
+<div
   class="mb-4 p-6 bg-cover max-w-screen-lg aspect-video bg-primary-700 border border-gray-600 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg flex flex-col items-center justify-center relative bg-[url(/shift.png)]"
 >
   <p class="text-4xl sm:text-5xl font-bold text-white mb-2 z-11">
@@ -78,10 +88,12 @@
   <div class="p-3">
     <p class="text-2xl font-medium mb-2">Built with privacy in mind</p>
     <p class="mb-1">The bot is entirely self-hostable and open source.</p>
-    <Button href="/shift-bot/self-host" color="primary"
+    <!-- <Button href="/shift-bot/self-host" color="primary" disabled -->
+    <Button color="primary" disabled
       ><BookOpenSolid class="me-2 h-5 w-5" /> Self-hosting guide</Button
     >
-    <Button href="https://github.com/valbuildr/shift-bot" color="dark"
+    <!-- <Button href="https://github.com/valbuildr/shift-bot" color="dark" disabled -->
+    <Button color="dark" disabled
       ><GithubSolid class="me-2 h-5 w-5" /> Check out the source code</Button
     >
   </div>
@@ -99,10 +111,12 @@
   <Button href="/shift-bot/positions-tool" color="dark"
     ><EditSolid class="me-2 h-5 w-5" /> Positions Tool</Button
   >
-  <Button href="https://discord.gg/" color="dark"
+  <!-- <Button href="https://discord.gg/" color="dark" disabled -->
+  <Button color="dark" disabled
     ><DiscordSolid class="me-2 h-5 w-5" /> Support Server</Button
   >
-  <Button href="/shift-bot/self-host" color="dark"
+  <!-- <Button href="/shift-bot/self-host" color="dark" disabled -->
+  <Button color="dark" disabled
     ><BookOpenSolid class="me-2 h-5 w-5" /> Self-hosting guide</Button
   >
 </div>
