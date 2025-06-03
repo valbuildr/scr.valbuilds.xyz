@@ -28,7 +28,11 @@
   />
 </div>
 
-{#each Object.values(PROJECTS).filter(project => !search || project.title.toLowerCase().includes(search.toLowerCase())) as project}
+{#each Object.values(PROJECTS)
+  .filter((project) => project.status != "draft")
+  .filter((project) => !search || project.title
+        .toLowerCase()
+        .includes(search.toLowerCase())) as project}
   <div
     class="mb-4 p-6 bg-cover max-w-screen-lg aspect-video bg-primary-700 border border-gray-600 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg flex flex-col items-start justify-end relative"
     style={"background-image: url(" + project.bgImage + ");"}
@@ -76,7 +80,10 @@
     {/if}
   </div>
 {/each}
-
-{#if Object.values(PROJECTS).filter(project => !search || project.title.toLowerCase().includes(search.toLowerCase())).length == 0}
+{#if Object.values(PROJECTS)
+  .filter((project) => project.status != "draft")
+  .filter((project) => !search || project.title
+        .toLowerCase()
+        .includes(search.toLowerCase())).length == 0}
   <p class="text-center text-white/75">No results</p>
 {/if}

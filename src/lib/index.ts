@@ -1,5 +1,3 @@
-// place files you want to import through the `$lib` alias in this folder.
-
 export const PROJECTS: {
   title: string;
   status: "draft" | "alpha" | "beta" | "released" | "eol";
@@ -12,8 +10,7 @@ export const PROJECTS: {
     title: "Transit Sitcombe (it's somewhat related to SCR, trust me)",
     status: "draft",
     buttonText: "Learn more",
-    // href: "https://sitcombe.valbuilds.xyz/",
-    href: "/sitcombe",
+    href: "https://sitcombe.valbuilds.xyz/",
     bgImage: "/sitcombe.png",
     darkBg: true,
   },
