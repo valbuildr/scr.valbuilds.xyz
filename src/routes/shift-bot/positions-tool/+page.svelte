@@ -92,7 +92,7 @@
       placeholder="Host*"
       class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
     />
-    <p class="text-gray-500/50 mb-2">
+    <p class="text-gray-200/50 mb-2">
       <i>This should be the host's Roblox username.</i>
     </p>
 
@@ -103,7 +103,7 @@
       placeholder="Co-Host(s)"
       class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
     />
-    <p class="text-gray-500/50 mb-2">
+    <p class="text-gray-200/50 mb-2">
       <i
         >This should be the co-host's Roblox username. Seperate cohosts with
         ','.</i
@@ -127,10 +127,10 @@
         style="color-scheme: dark;"
       />
     </div>
-    <p class="text-gray-500/50 mb-2">
+    <p class="text-gray-200/50 mb-2">
       <i
-        >This should be in UK time, or whatever your community has agreed upon.
-        Visit <a
+        >This should be in UK time, or whatever timezone your community has
+        agreed upon. Visit <a
           href="https://www.timeanddate.com/worldclock/converter.html"
           target="_blank"
           class="hover:underline">this website</a
