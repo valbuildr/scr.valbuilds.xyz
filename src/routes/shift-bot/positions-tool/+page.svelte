@@ -1,6 +1,9 @@
 <script lang="ts">
   import { Button } from "flowbite-svelte";
-  import { ClipboardListOutline } from "flowbite-svelte-icons";
+  import {
+    ClipboardListOutline,
+    ChevronLeftOutline,
+  } from "flowbite-svelte-icons";
 
   import SupervisorPositions from "$lib/shift-bot/positions-tool/SupervisorPositions.svelte";
   import SpecialPositions from "$lib/shift-bot/positions-tool/SpecialPositions.svelte";
@@ -38,6 +41,12 @@
 
 <div class="max-w-screen-lg p-2 mx-auto">
   <div class="flex gap-2">
+    <a
+      class="text-white/75 hover:text-white transition-colors hover:underline"
+      href="/shift-bot"
+    >
+      <ChevronLeftOutline class="w-5 h-5 inline" /> Back to Shift Bot
+    </a>
     <a
       class="text-white/75 hover:text-white transition-colors hover:underline"
       href="/shift-bot/positions-tool/stations"
