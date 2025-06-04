@@ -35,7 +35,7 @@
 </script>
 
 <div
-  class="max-w-screen-lg p-2 mx-auto w-full text-white bg-ds/50 lg:rounded-lg"
+  class="max-w-screen-lg p-2 mx-auto w-full text-white bg-ds/50"
 >
   <div class="flex justify-between items-center mb-1">
     <p class="text-xl font-bold">Dispatchers</p>

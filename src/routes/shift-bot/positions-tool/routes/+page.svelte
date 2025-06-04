@@ -97,7 +97,7 @@
             {route[1].operator}
           </p>
         {:else}
-          <p class="px-1 mx-1 bg-primary-500/50 rounded">
+          <p class="px-1 mx-1 bg-gray-500/50 rounded">
             {route[1].operator}
           </p>
         {/if}

@@ -18,7 +18,7 @@
 <div class="flex flex-col gap-2">
   {#each Object.entries(SIGNAL_ZONES) as zone}
     <div
-      class="max-w-screen-lg p-2 mx-auto w-full text-white bg-primary-500/50 lg:rounded-lg"
+      class="max-w-screen-lg p-2 mx-auto w-full text-white bg-gray-500/50 lg:rounded-lg"
       id={zone[0]}
     >
       <!-- Zone Name -->

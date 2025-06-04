@@ -62,9 +62,9 @@
   </p>
 </div>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col">
   <div
-    class="max-w-screen-lg p-2 mx-auto w-full text-white bg-primary-900/50 lg:rounded-lg"
+    class="max-w-screen-lg p-2 mx-auto w-full text-white bg-gray-900/50 lg:rounded-t-lg"
   >
     <p class="text-xl font-bold mb-2">General Information</p>
 
@@ -73,7 +73,7 @@
       type="text"
       bind:value={shiftName}
       placeholder="Name*"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400 mb-2"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
     />
 
     <p class="pl-1">Host*</p>
@@ -81,9 +81,9 @@
       type="text"
       bind:value={shiftHost}
       placeholder="Host*"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
     />
-    <p class="text-primary-500/50 mb-2">
+    <p class="text-gray-500/50 mb-2">
       <i>This should be the host's Roblox username.</i>
     </p>
 
@@ -92,9 +92,9 @@
       type="text"
       bind:value={shiftCohost}
       placeholder="Co-Host(s)"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
     />
-    <p class="text-primary-500/50 mb-2">
+    <p class="text-gray-500/50 mb-2">
       <i
         >This should be the co-host's Roblox username. Seperate cohosts with
         ','.</i
@@ -107,18 +107,18 @@
         type="date"
         bind:value={shiftDate}
         placeholder="Start Date*"
-        class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400"
+        class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
         style="color-scheme: dark;"
       />
       <input
         type="time"
         bind:value={shiftTime}
         placeholder="Start Time*"
-        class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400"
+        class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400"
         style="color-scheme: dark;"
       />
     </div>
-    <p class="text-primary-500/50 mb-2">
+    <p class="text-gray-500/50 mb-2">
       <i
         >This should be in UK time, or whatever your community has agreed upon.
         Visit <a
@@ -134,14 +134,14 @@
       type="time"
       bind:value={shiftDuration}
       placeholder="Duration*"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400 mb-2"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
     />
 
     <p class="pl-1">Ruleset*</p>
     <select
       bind:value={shiftRuleset}
       placeholder="Ruleset*"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400 mb-2"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
     >
       <option selected disabled value="">Select a ruleset...</option>
       <option value="normal">Normal: All operational rules apply.</option>
@@ -155,7 +155,7 @@
       type="text"
       bind:value={shiftScenario}
       placeholder="Scenario"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400 mb-2"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
     />
 
     <p class="pl-1">Notes</p>
@@ -163,7 +163,7 @@
       type="text"
       bind:value={shiftNotes}
       placeholder="Notes"
-      class="w-full bg-primary-500/50 text-white border-0 rounded-lg focus:ring-primary-300 placeholder:text-primary-400 mb-2"
+      class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 mb-2"
     />
   </div>
 
@@ -235,11 +235,14 @@
   />
 
   <div
-    class="max-w-screen-lg flex gap-2 p-2 mx-auto w-full text-white bg-primary-900/50 lg:rounded-lg"
+    class="max-w-screen-lg flex gap-2 p-2 mx-auto w-full text-white bg-gray-900/50 lg:rounded-b-lg"
   >
-    <Button disabled size="lg" title="Coming soon...">Import</Button>
+    <Button color="light" disabled size="lg" title="Coming soon..."
+      >Import</Button
+    >
 
     <Button
+      color="light"
       disabled={shiftName == undefined ||
         shiftName == "" ||
         shiftHost == undefined ||
