@@ -27,9 +27,15 @@
 </div>
 
 <div class="flex flex-col gap-2">
-  {#each Object.entries(ROUTES).filter(([key, value]) => !search || key
+  {#each Object.entries(ROUTES).filter(([key, route]) => key
         .toLowerCase()
-        .includes(search.toLowerCase())) as route}
+        .includes(search.toLowerCase()) || (route.alternate_name && route.alternate_name
+          .toLowerCase()
+          .includes(search.toLowerCase())) || STATIONS[route.inbound_destination]?.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) || STATIONS[route.outbound_destination]?.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) || (route.inbound_route && route.inbound_route.some( (entry) => (STATIONS[entry]?.name?.toLowerCase() || entry.toLowerCase()).includes(search.toLowerCase()) )) || (route.outbound_route && route.outbound_route.some( (entry) => (STATIONS[entry]?.name?.toLowerCase() || entry.toLowerCase()).includes(search.toLowerCase()) ))) as route}
     <div
       class="max-w-screen-lg p-2 mx-auto w-full text-white {route[1].operator ==
       Operator.Airlink

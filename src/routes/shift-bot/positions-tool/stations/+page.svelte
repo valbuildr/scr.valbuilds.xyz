@@ -1,6 +1,8 @@
 <script lang="ts">
   import { STATIONS, Operator } from "$lib/shift-bot/positions-tool/index";
   import { LinkOutline, ChevronLeftOutline } from "flowbite-svelte-icons";
+
+  let search: string = $state("");
 </script>
 
 <div class="max-w-screen-lg p-2 mx-auto">
@@ -11,10 +13,25 @@
     <ChevronLeftOutline class="w-5 h-5 inline" /> Back to positions tool
   </a>
   <p class="text-3xl sm:text-4xl font-bold text-white mt-2 z-11">Stations</p>
+  <input
+    type="text"
+    bind:value={search}
+    placeholder="Search"
+    class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 my-2"
+  />
 </div>
 
 <div class="flex flex-col gap-2">
-  {#each Object.entries(STATIONS) as station}
+  {#each Object.entries(STATIONS).filter(([, station], i, arr) =>
+    !search ||
+    station.name.toLowerCase().includes(search.toLowerCase()) ||
+    station.operators.some(op => op.toLowerCase().includes(search.toLowerCase())) ||
+    station.managers.some(mgr => mgr.toLowerCase().includes(search.toLowerCase())) ||
+    (station.signal_zone && station.signal_zone.some(z => z.toLowerCase().includes(search.toLowerCase()))) ||
+    (station.headcode && station.headcode.toLowerCase().includes(search.toLowerCase())) ||
+    (station.dispatch_groups && station.dispatch_groups.some(g => g.toString().toLowerCase().includes(search.toLowerCase()))) ||
+    arr[i][0].toLowerCase().includes(search.toLowerCase()) // <-- match station code (key)
+  ) as station}
     <div
       class="max-w-screen-lg p-2 mx-auto w-full text-white {station[1]
         .managers[0] == Operator.Airlink

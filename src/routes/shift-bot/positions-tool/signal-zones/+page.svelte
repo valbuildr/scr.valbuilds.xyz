@@ -1,6 +1,8 @@
 <script lang="ts">
   import { SIGNAL_ZONES, STATIONS } from "$lib/shift-bot/positions-tool/index";
   import { LinkOutline, ChevronLeftOutline } from "flowbite-svelte-icons";
+
+  let search: string = $state("");
 </script>
 
 <div class="max-w-screen-lg p-2 mx-auto">
@@ -13,10 +15,23 @@
   <p class="text-3xl sm:text-4xl font-bold text-white mt-2 z-11">
     Signal Zones
   </p>
+  <input
+    type="text"
+    bind:value={search}
+    placeholder="Search"
+    class="w-full bg-gray-500/50 text-white border-0 rounded-lg focus:ring-gray-300 placeholder:text-gray-400 my-2"
+  />
 </div>
 
 <div class="flex flex-col gap-2">
-  {#each Object.entries(SIGNAL_ZONES) as zone}
+  {#each Object.entries(SIGNAL_ZONES).filter(([key, zone]) =>
+    zone.name.toLowerCase().includes(search.toLowerCase()) ||
+    key.toLowerCase().includes(search.toLowerCase()) ||
+    zone.stations.some(station =>
+      STATIONS[station]?.name?.toLowerCase().includes(search.toLowerCase()) ||
+      station.toLowerCase().includes(search.toLowerCase())
+    )
+  ) as zone}
     <div
       class="max-w-screen-lg p-2 mx-auto w-full text-white bg-gray-500/50 lg:rounded-lg"
       id={zone[0]}
