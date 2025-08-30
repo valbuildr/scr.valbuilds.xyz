@@ -10,6 +10,16 @@
   let search: string = $state("");
 </script>
 
+<div
+  class="mb-4 p-2 max-w-screen-lg bg-blue-950/50 border border-blue-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
+>
+  📝 <span class="font-bold"
+    >This website is not currently receiving updates.</span
+  >
+  Read more on why that is
+  <a class="hover:underline text-blue-400" href="/roblox">here</a>.
+</div>
+
 <div class="max-w-screen-lg p-2 mx-auto">
   <a
     class="text-white/75 hover:text-white transition-colors hover:underline"

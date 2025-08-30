@@ -5,6 +5,16 @@
   let search: string = $state("");
 </script>
 
+<div
+  class="mb-4 p-2 max-w-screen-lg bg-blue-950/50 border border-blue-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
+>
+  📝 <span class="font-bold"
+    >This website is not currently receiving updates.</span
+  >
+  Read more on why that is
+  <a class="hover:underline text-blue-400" href="/roblox">here</a>.
+</div>
+
 <div class="max-w-screen-lg p-2 mx-auto">
   <a
     class="text-white/75 hover:text-white transition-colors hover:underline"
@@ -22,16 +32,22 @@
 </div>
 
 <div class="flex flex-col gap-2">
-  {#each Object.entries(STATIONS).filter(([, station], i, arr) =>
-    !search ||
-    station.name.toLowerCase().includes(search.toLowerCase()) ||
-    station.operators.some(op => op.toLowerCase().includes(search.toLowerCase())) ||
-    station.managers.some(mgr => mgr.toLowerCase().includes(search.toLowerCase())) ||
-    (station.signal_zone && station.signal_zone.some(z => z.toLowerCase().includes(search.toLowerCase()))) ||
-    (station.headcode && station.headcode.toLowerCase().includes(search.toLowerCase())) ||
-    (station.dispatch_groups && station.dispatch_groups.some(g => g.toString().toLowerCase().includes(search.toLowerCase()))) ||
-    arr[i][0].toLowerCase().includes(search.toLowerCase()) // <-- match station code (key)
-  ) as station}
+  {#each Object.entries(STATIONS).filter(([, station], i, arr) => !search || station.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) || station.operators.some((op) => op
+          .toLowerCase()
+          .includes(search.toLowerCase())) || station.managers.some((mgr) => mgr
+          .toLowerCase()
+          .includes(search.toLowerCase())) || (station.signal_zone && station.signal_zone.some( (z) => z
+              .toLowerCase()
+              .includes(search.toLowerCase()) )) || (station.headcode && station.headcode
+          .toLowerCase()
+          .includes(search.toLowerCase())) || (station.dispatch_groups && station.dispatch_groups.some( (g) => g
+              .toString()
+              .toLowerCase()
+              .includes(search.toLowerCase()) )) || arr[i][0]
+        .toLowerCase()
+        .includes(search.toLowerCase())) as station} // <-- match station code (key)
     <div
       class="max-w-screen-lg p-2 mx-auto w-full text-white {station[1]
         .managers[0] == Operator.Airlink

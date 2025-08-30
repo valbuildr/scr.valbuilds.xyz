@@ -5,6 +5,16 @@
   let search: string = $state("");
 </script>
 
+<div
+  class="mb-4 p-2 max-w-screen-lg bg-blue-950/50 border border-blue-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
+>
+  📝 <span class="font-bold"
+    >This website is not currently receiving updates.</span
+  >
+  Read more on why that is
+  <a class="hover:underline text-blue-400" href="/roblox">here</a>.
+</div>
+
 <div class="max-w-screen-lg p-2 mx-auto">
   <a
     class="text-white/75 hover:text-white transition-colors hover:underline"
@@ -24,14 +34,15 @@
 </div>
 
 <div class="flex flex-col gap-2">
-  {#each Object.entries(SIGNAL_ZONES).filter(([key, zone]) =>
-    zone.name.toLowerCase().includes(search.toLowerCase()) ||
-    key.toLowerCase().includes(search.toLowerCase()) ||
-    zone.stations.some(station =>
-      STATIONS[station]?.name?.toLowerCase().includes(search.toLowerCase()) ||
-      station.toLowerCase().includes(search.toLowerCase())
-    )
-  ) as zone}
+  {#each Object.entries(SIGNAL_ZONES).filter(([key, zone]) => zone.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) || key
+        .toLowerCase()
+        .includes(search.toLowerCase()) || zone.stations.some((station) => STATIONS[station]?.name
+            ?.toLowerCase()
+            .includes(search.toLowerCase()) || station
+            .toLowerCase()
+            .includes(search.toLowerCase()))) as zone}
     <div
       class="max-w-screen-lg p-2 mx-auto w-full text-white bg-gray-500/50 lg:rounded-lg"
       id={zone[0]}
