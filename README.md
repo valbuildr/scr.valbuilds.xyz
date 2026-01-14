@@ -1,8 +1,7 @@
 # scr.valbuilds.xyz
 
-> [!WARNING]
-> This project will not receive major updates until further notice. For more information on why, visit [scr.valbuilds.xyz/roblox](https://scr.valbuilds.xyz/roblox)
+> [!INFO] scr.valbuilds.xyz has been replaced with rblx.valbuilds.xyz.
 >
-> Minor updates, like fixing typos and security fixes will still occur.
+> Read more at [scr.valbuilds.xyz/posts/01-same-work-new-place](https://scr.valbuilds.xyz/posts/01-same-work-new-place).
 
 A website for all of my SCR-related projects.

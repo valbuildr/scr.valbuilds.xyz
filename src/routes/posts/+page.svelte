@@ -9,6 +9,13 @@
       pubDate: "2025-08-29",
       author: "valbuildr",
     },
+    {
+      slug: "/posts/01-same-work-new-place",
+      title:
+        "Same work, New place. scr.valbuilds.xyz is now rblx.valbuilds.xyz",
+      pubDate: "2026-01-14",
+      author: "valbuildr",
+    },
   ];
 
   const authors = {
