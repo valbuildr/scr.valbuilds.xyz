@@ -21,11 +21,13 @@
 <div
   class="mb-4 p-2 max-w-screen-lg bg-blue-950/50 border border-blue-200/50 lg:border-x border-x-0 text-white mx-auto lg:rounded-lg"
 >
-  📝 <span class="font-bold"
-    >This website is not currently receiving updates.</span
+  🐇 <span class="font-bold"
+    >Same work, New place. scr.valbuilds.xyz is now rblx.valbuilds.xyz.</span
   >
-  Read more on why that is
-  <a class="hover:underline text-blue-400" href="/roblox">here</a>.
+  Read more
+  <a class="hover:underline text-blue-400" href="/posts/01-same-work-new-place"
+    >here</a
+  >.
 </div>
 
 <div
