@@ -1,4 +1,15 @@
+<script lang="ts">
+  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
+  const pubDate = new Date("2025-08-29");
+</script>
+
 <div class="p-2 max-w-screen-lg mx-auto text-white">
+  <Breadcrumb class="mb-2">
+    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+    <BreadcrumbItem href="/posts">Posts</BreadcrumbItem>
+    <BreadcrumbItem>Roblox needs to switch paths.</BreadcrumbItem>
+  </Breadcrumb>
+
   <h1 class="text-3xl font-bold mb-2">Roblox needs to switch paths.</h1>
   <div class="flex items-center mb-2 gap-2">
     <img
@@ -7,7 +18,7 @@
       alt="valbuildr"
     />
     <p class="text-white/75 pr-2 border-r-2 border-r-white/75">valbuildr</p>
-    <p class="text-white/75">Aug. 29, 2025</p>
+    <p class="text-white/75">{pubDate.toLocaleDateString()}</p>
   </div>
 
   <div
